@@ -223,8 +223,8 @@ OSL_demo/
 **Source code of the full engine is available on reasonable request.**
 
 - Author: Kaiyang Wei
-- Email: `weikaiyang.kw@gmail.com`  *(replace with your preferred contact)*
-- ORCID: `<your-orcid>`  *(optional)*
+- Email: `weikaiyang.kw@gmail.com`
+- ORCID: see [GitHub profile](https://github.com/KaiyangW) (link in bio)
 
 ---
 
