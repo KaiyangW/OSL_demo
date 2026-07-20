@@ -192,9 +192,8 @@ them for a collaboration or replication, please ask.
 
 **Source code of the full engine is available on reasonable request.**
 
-- Author: Kaiyang Wang
-- Email: `<your-email>@st-andrews.ac.uk`  *(replace with your preferred contact)*
-- ORCID: `<your-orcid>`  *(optional)*
+- Author: Kaiyang Wei
+- Email: weikaiyang.kw@gmail.com
 
 ---
 
