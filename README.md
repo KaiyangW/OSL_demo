@@ -2,11 +2,11 @@
 
 A **public demo** of the automated organic-semiconductor-laser (OSL)
 photophysics data-processing workflow I developed during my PhD. It exposes
-one end-to-end pipeline — **raw TCSPC decay CSV → interactive fit →
-publication-grade figure** — so colleagues can experience the look and feel
-of the full private research codebase without it being freely downloadable.
+one end-to-end pipeline — **raw decay → interactive analysis →
+publication-grade figure** — so you can evaluate the code quality and workflow 
+design before deciding whether to request the full engine.
 
-If you want the full engine for your own work, please get in touch (see
+If you want the full engine, please get in touch (see
 `Contact` below) — the source is available on reasonable request.
 
 ---
@@ -92,9 +92,7 @@ them for a collaboration or replication, please ask.
 ## What this demo does
 
 This repository exposes the **TRPL / TCSPC tail-fit → publication plot**
-pipeline only. It is intentionally simplified — no reconvolution, no
-multi-start, no PF/DF, no RISC, no uncertainty propagation. The math is the
-same family of methods; the heavy infrastructure is removed.
+pipeline only. It is intentionally simplified.
 
 ```
  raw decay CSV
