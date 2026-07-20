@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.xlsx
+*_DecayResidual.png
+*_DecayResidual.pdf
+.pytest_cache/
+.venv/
+venv/
+.ipynb_checkpoints/
