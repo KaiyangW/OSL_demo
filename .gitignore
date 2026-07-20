@@ -3,6 +3,8 @@ __pycache__/
 *.xlsx
 *_DecayResidual.png
 *_DecayResidual.pdf
+*_plot_config.json
+fit results.png
 .pytest_cache/
 .venv/
 venv/

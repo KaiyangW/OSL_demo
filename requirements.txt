@@ -3,3 +3,5 @@ scipy>=1.10
 pandas>=2.0
 matplotlib>=3.7
 openpyxl>=3.1
+plotly>=5.18
+dash>=2.14

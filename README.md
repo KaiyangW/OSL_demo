@@ -106,11 +106,15 @@ chi^2 = sum( (data - model)^2 / max(data, 1) ) / (N - P)
 
 4. **Make the publication figure**:
 
+   There are two plotters, pick the one you want:
+
+   **Quick static export** (no interaction, single command, 600 dpi PNG + PDF):
+
    ```bash
    python decay_plot.py path/to/your_saved.xlsx
    ```
 
-   Two files are written beside the `.xlsx`:
+   Files written beside the `.xlsx`:
 
    - `your_saved_DecayResidual.png` (600 dpi)
    - `your_saved_DecayResidual.pdf`
@@ -122,6 +126,27 @@ chi^2 = sum( (data - model)^2 / max(data, 1) ) / (N - P)
    python decay_plot.py your_saved.xlsx p
    ```
 
+   **Interactive Plotly explorer** (browser-based, then 600 dpi export):
+
+   ```bash
+   pip install plotly dash   # extra deps for this mode
+   python decay_plot_interactive.py path/to/your_saved.xlsx
+   ```
+
+   A browser window opens at `http://127.0.0.1:8050` with:
+
+   - Data / Fit / IRF / Residual trace toggles
+   - Log-x toggle, time-unit selector (ns/µs/ms/s/auto)
+   - **Per-trace baseline offset sliders** (Data / Fit / IRF) — useful when
+     comparing curves that overlap visually
+   - Annotation box: tau, beta, chi² (read from the Parameters sheet), plus
+     editable tau subscript and λ_ex / λ_emi fields
+   - "Save publication PNG/PDF" button — re-renders the current view
+     (including offsets, log-x, and zoom) as a 600 dpi Matplotlib figure
+     next to the `.xlsx` file.
+
+   No EMF export is included in the demo.
+
 ---
 
 ## Repository layout
@@ -130,12 +155,13 @@ chi^2 = sum( (data - model)^2 / max(data, 1) ) / (N - P)
 OSL_demo/
 ├── README.md
 ├── requirements.txt
-├── read_data.py        # minimal CSV reader (Time, Counts)
-├── tail_fit.py         # simplified tail-fit engine (single least_squares)
-├── fit_gui.py          # Tk + Matplotlib interactive GUI (tail only)
-├── decay_plot.py       # matplotlib publication plotter (no baseline shift)
-├── data/               # place your decay CSV here
-└── screenshots/        # GUI/figure screenshots (add your own)
+├── read_data.py                  # minimal CSV reader (Time, Counts)
+├── tail_fit.py                   # simplified tail-fit engine (single least_squares)
+├── fit_gui.py                    # Tk + Matplotlib interactive GUI (tail only)
+├── decay_plot.py                 # matplotlib publication plotter (static, no baseline shift)
+├── decay_plot_interactive.py     # Plotly + Dash interactive plotter (with baseline offsets)
+├── data/                         # place your decay CSV here
+└── screenshots/                  # GUI/figure screenshots (add your own)
 ```
 
 ---
@@ -153,7 +179,9 @@ The full private research tool adds, on top of this demo:
 - **RISC / ISC kinetic-rate calculator** bridge (Excel + Python exact
   analytic solver for TADF rate constants)
 - **Plotly/Dash interactive explorer** with baseline-shift, log-x toggle,
-  multi-curve overlay, EMF export, and persistent per-dataset config
+  time-unit selector, and 600 dpi publication export from the current view
+  (this is `decay_plot_interactive.py` in the demo, included)
+- **EMF export** for editable Word/PowerPoint figures
 
 These are intentionally withheld from the public demo. If you need any of
 them for a collaboration or replication, please ask.

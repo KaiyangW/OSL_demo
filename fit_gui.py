@@ -7,7 +7,6 @@ Workflow:
 4. Click "Run Fit (Enter)" to fit; the fit curve and residuals update live.
 5. Click "Save Results (.xlsx)" to export the Excel workbook the plotter reads.
 
-This is a stripped-down demo: only tail mode, no IRF, no PF/DF, no RISC.
 """
 
 from __future__ import annotations
